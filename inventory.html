@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="robots" content="index, follow">
+<meta name="author" content="ActiveStan">
+<meta name="theme-color" content="#2563eb">
+  <title>Our Fleet & Prices | Rakel Autos - Mini Buses for Sale in Nigeria</title>
+  <meta name="description" content="View current inventory and prices of premium Japanese mini buses, keke, and shuttle vehicles at Rakel Autos. Accident-free, fuel-efficient models with nationwide delivery.">
+  <meta name="keywords" content="mini bus prices Nigeria, keke for sale, keke bus prices, shuttle bus prices, shuttle bus  inventory, Rakel Autos fleet, shuttle buses">
+
+  <!-- Open Graph Specific -->
+  <meta property="og:title" content="Rakel Autos Fleet & Prices | Mini Buses for Sale in Nigeria">
+  <meta property="og:description" content="Explore our latest stock of reliable Japanese mini buses with competitive pricing and full specifications.">
+  <meta property="og:url" content="https://yourdomain.com/inventory.html">
+
+  <!-- Twitter Specific -->
+  <meta name="twitter:title" content="Rakel Autos Fleet & Prices | Mini Buses for Sale in Nigeria">
+  <meta name="twitter:description" content="Explore our latest stock of reliable Japanese mini buses with competitive pricing and full specifications.">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; color: #1f2933; background: #f9fafb; }
+    a { text-decoration: none; color: inherit; }
+
+    header {
+      background: linear-gradient(rgba(2, 6, 23, 0.7), rgba(15, 23, 42, 0.7)), url('image/hero.jpg') center/cover no-repeat;
+      color: white;
+      padding: 120px 10% 80px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 80px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    nav h1 { font-size: 1.8rem; }
+    nav ul { display: flex; gap: 24px; list-style: none; }
+    nav ul li a { font-weight: 500; transition: opacity 0.3s; }
+    nav ul li a:hover { opacity: 0.8; }
+
+    .hero {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .hero h2 {
+      font-size: 3.5rem;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-buttons a {
+      display: inline-block;
+      padding: 16px 32px;
+      border-radius: 10px;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary { background: #2563eb; color: white; }
+    .btn-primary:hover { background: #1d4ed8; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4); }
+    .btn-secondary { border: 2px solid white; }
+    .btn-secondary:hover { background: white; color: #2563eb; transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 255, 255, 0.3); }
+
+    section {
+      padding: 80px 10%;
+    }
+    .section-title {
+      font-size: 2.4rem;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .fleet {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .bus-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: all 0.4s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .bus-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .bus-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .bus-card img:hover {
+      transform: scale(1.05);
+    }
+    .bus-card .content {
+      padding: 28px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .bus-card h3 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .bus-meta {
+      font-size: 0.95rem;
+      opacity: 0.85;
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+    .bus-price {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+    .bus-card .btn-primary {
+      align-self: flex-start;
+      padding: 12px 24px;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background: #020617;
+      color: #94a3b8;
+      padding: 40px 10%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      margin-top: 80px;
+    }
+    footer h4 { color: white; margin-bottom: 12px; }
+    footer a { display: block; margin-bottom: 8px; transition: color 0.3s; }
+    footer a:hover { color: white; }
+
+    .whatsapp1 {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: #25d366;
+      color: white;
+      padding: 16px 20px;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      z-index: 100;
+    }
+
+    @media (max-width: 768px) {
+      .hero h2 { font-size: 2.8rem; }
+      .hero-buttons a { display: block; width: 80%; margin: 12px auto; }
+      nav ul { gap: 16px; }
+      nav h1 { font-size: 1.5rem; }
+    }
+
+    /* Disclaimer Popup Modal */
+    .disclaimer-modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+    }
+    .disclaimer-content {
+      background-color: #fff;
+      margin: 0 auto;
+      padding: 40px;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+    .disclaimer-content h2 {
+      font-size: 1.8rem;
+      color: #1a2f5a;
+      margin-bottom: 20px;
+    }
+    .disclaimer-content p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+      color: #444;
+    }
+    .disclaimer-btn {
+      padding: 14px 40px;
+      background-color: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .disclaimer-btn:hover {
+      background-color: #1d4ed8;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+    }
+    @media (max-width: 768px) {
+      .disclaimer-content {
+        padding: 30px;
+        margin: 20% auto;
+      }
+      .disclaimer-content h2 {
+        font-size: 1.6rem;
+      }
+    }
+
+    /* Image Lightbox Modal */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      z-index: 10001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .lightbox-content {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: white;
+      font-size: 2.5rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: opacity 0.3s;
+    }
+    .lightbox-close:hover {
+      opacity: 0.7;
+    }
+     /*social section*/
+  
+.social-section {
+  background: #f8f9fa;
+  padding: 80px 20px;
+  text-align: center;
+}
+.social-section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: #1a2f5a;
+}
+.social-section p {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #555;
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.social-link {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+.social-link:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+.facebook {
+  background: #1877F2;
+  color: white;
+}
+.facebook:hover {
+  background: #166fe5;
+}
+.whatsapp {
+  background: #25D366;
+  color: white;
+}
+.whatsapp:hover {
+  background: #128C7E;
+}
+.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+  color: white;
+}
+.instagram:hover {
+  opacity: 0.9;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .social-icons {
+    gap: 30px;
+  }
+  .social-link {
+    width: 70px;
+    height: 70px;
+  }
+}
+  </style>
+</head>
+<body>
+
+<!-- Disclaimer Popup Modal -->
+<div id="disclaimerModal" class="disclaimer-modal">
+  <div class="disclaimer-content">
+    <h2>Price Disclaimer</h2>
+    <p>Prices displayed on this website are slightly negotiable and subject to change without prior notice. Actual prices may vary due to fluctuations in foreign exchange rates, customs duties, clearing charges, and other import-related fees.</p>
+    <p>For the most accurate and current pricing, please contact us directly via WhatsApp or phone.</p>
+    <button class="disclaimer-btn" onclick="closeDisclaimer()">Agree & Continue</button>
+  </div>
+</div>
+
+<!-- Image Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox()">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <img id="lightboxImage" class="lightbox-content" alt="Zoomed Vehicle Image">
+</div>
+
+<header>
+  <nav>
+    <h1>Rakel Autos</h1>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <h2>Explore Our Premium Mini Bus Fleet</h2>
+    <p>Reliable, accident-free Japanese shuttle buses ready for schools, corporate transport, hotels, churches, and commercial operations.</p>
+    <div class="hero-buttons">
+      <a href="#fleet" class="btn-primary">View All Vehicles</a>
+      <a href="#contact" class="btn-secondary">Request Quote</a>
+    </div>
+  </div>
+</header>
+
+<section id="fleet">
+  <h2 class="section-title">Available Mini Buses</h2>
+
+  <div class="fleet">
+    <!-- Bus Card 1 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0039.jpg" alt="Suzuki New Model" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Suzuki Every Automatic New Model</h3>
+        <p class="bus-meta">Automatic New Model • Petrol • AC • Perfect for taxi</p>
+        <div class="bus-price">₦3,750,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 2 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0041.jpg" alt="Suzuki Manual Old Model" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Suzuki Every Manual Old Model</h3>
+        <p class="bus-meta">Manual Old Model • Petrol • Full AC • Spacious interior ideal for tours and hotels</p>
+        <div class="bus-price">₦3,900,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 3 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0083.jpg" alt="Daihatsu New Model Automatic" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Daihatsu Atria New Model Automatic</h3>
+        <p class="bus-meta">New Model • Petrol • High Roof • Excellent for schools and large groups</p>
+        <div class="bus-price">₦3,700,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 4 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0091.jpg" alt="Daihatsu New Model Automatic1" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Daihatsu Atria New Model Automatic</h3>
+        <p class="bus-meta">New Model • Petrol • AC • Compact and fuel-efficient</p>
+        <div class="bus-price">₦24,500,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 5 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0066.jpg" alt="Daihatsu Hijet" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Daihatsu Hijet New Model Automatic</h3>
+        <p class="bus-meta">New Model • Petrol • Comfort seats • Great for church and events</p>
+        <div class="bus-price">₦3,750,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 6 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0076.jpg" alt="Daihatsu Hijet Pickup" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>Daihatsu Hijet Pickup Truck Manual</h3>
+        <p class="bus-meta">Old Model • Petrol • Comfort seats • Great for deliveries for companies and shops</p>
+        <div class="bus-price">₦3,750,000</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Inquire Now</a>
+      </div>
+    </div>
+
+    <!-- Bus Card 7 -->
+    <div class="bus-card">
+      <img src="image/IMG-20260105-WA0089.jpg" alt="More Buses Coming" onclick="openLightbox(this.src, this.alt)">
+      <div class="content">
+        <h3>More Vehicles Coming Soon</h3>
+        <p class="bus-meta">New stock arriving regularly. Contact us for upcoming inventory.</p>
+        <div class="bus-price">Contact for Details</div>
+        <a href="https://wa.me/2349074676953" class="btn-primary">Get Updates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="socials" class="social-section">
+  <div class="container">
+    <h2>Connect With Us</h2>
+    <p>Follow us for the latest vehicle arrivals, special offers, and transport tips.</p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/1DV2TTVqu3/?mibextid=wwXlfr" target="_blank" class="social-link facebook" aria-label="Follow us on Facebook">
+        <i class="fab fa-facebook-f fa-3x"></i>
+      </a>
+      <a href="https://wa.me/2349074676953" target="_blank" class="social-link whatsapp" aria-label="Chat with us on WhatsApp">
+        <i class="fab fa-whatsapp fa-3x"></i>
+      </a>
+      <a href="https://www.instagram.com/rakelautos?igsh=MTdtcDJncGFlaXJqcg%3D%3D&utm_source=qr" target="_blank" class="social-link instagram" aria-label="Follow us on Instagram">
+        <i class="fab fa-instagram fa-3x"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+  <div>
+    <h4>Rakel Autos</h4>
+    <p>Professional mini bus sales and transport solutions.</p>
+  </div>
+  <div>
+    <h4>Quick Links</h4>
+    <a href="index.html">Home</a>
+    <a href="inventory.html">Prices</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div>
+    <h4>Contact</h4>
+    <p>Phone: +2349074676953</p>
+    <p>Email: <a href="mailto: odimegwustanley2004@gmail.com">sales@rakelautos.com</a></p>
+  </div>
+</footer>
+
+<a class="whatsapp1" href="https://wa.me/2349074676953">WhatsApp Us</a>
+
+<script>
+  // Disclaimer Modal
+  window.onload = function() {
+    document.getElementById('disclaimerModal').style.display = 'flex';
+  };
+
+  function closeDisclaimer() {
+    document.getElementById('disclaimerModal').style.display = 'none';
+  }
+
+  // Lightbox Modal for Images
+  function openLightbox(src, alt) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImage');
+    img.src = src;
+    img.alt = alt;
+    modal.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+  }
+
+  // Close lightbox when clicking outside image
+  document.getElementById('lightboxModal').addEventListener('click', function(e) {
+    if (e.target !== document.getElementById('lightboxImage')) {
+      closeLightbox();
+    }
+  });
+</script>
+
+</body>
+</html>
